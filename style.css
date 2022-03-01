@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+     'Open Sans', 'Helvetica Neue', sans-serif;
+     text-decoration: none;
+     list-style: none;
+     color: rgb(219, 213, 230);
+}
+
+
+#cabecalho {
+    background-color: rgb(58, 22, 92);
+    position: fixed;
+    width: 100%;
+}
+
+#logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 8vh;
+    margin: 0 4rem;
+}
+
+#menu {
+    display: flex;
+    gap: 1rem;
+}
+
+#menu a {
+    padding: .4rem;
+    font-weight: 900;
+}
+ 
+#menu a:hover {
+    background-color: rgb(105, 46, 161);
+    border-radius: 15px;
+    transition: .2s;
+}
+
+body {
+    background: url(images/patrick-fore-850jTF12RSQ-unsplash.jpg) no-repeat
+    center center ;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+@media (max-width: 700px){
+
+#menu {
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: rgb(58, 22, 92);
+    height: 0;
+}
+
+#nav-bar.active #menu {
+    visibility: visible;
+    display: block;
+    transition: .3s;
+    background-color: rgb(58, 22, 92);
+    height: calc(100vh - 70px);
+    overflow-x: auto;
+    z-index: 1000;
+}
+
+#menu a {
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-style: bold;
+    font-weight: 900;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+#menu li {
+    padding: 2rem 0;
+}
+
+#btn-mobile {
+    display: flex;
+    border: none;
+    background: none;
+    font-size: medium;
+}
+
+
+#hamburger {
+    border-top: 2px solid;
+    width: 20px;
+}
+
+#hamburger::after, #hamburger::before {
+    content:'';
+    display: block; 
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+}
+
+#nav-bar.active #hamburger {
+    border-top: none;
+    padding: .1rem;
+}
+
+#nav-bar.active #hamburger::before {
+    transform: rotate(135deg);
+    transition: .3s;
+}
+
+#nav-bar.active #hamburger::after {
+    transform: rotate(-135deg);
+    transition: .3s;
+    position: relative;
+    top: -7px;
+}
+
+#nav-bar.off #hamburger {
+    transition: .3s ease-out;
+}
+
+#nav-bar.off #hamburger::before {
+    transform: rotate(0);
+    transition: .3s;
+}
+
+#nav-bar.off #hamburger::after {
+    transform: rotate(0);
+    transition: .3s;
+    position: relative;
+}
+
+} 
+
